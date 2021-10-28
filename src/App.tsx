@@ -10,7 +10,6 @@ import {
   createPlateComponents,
   createReactPlugin,
   createTrailingBlockPlugin,
-  ELEMENT_LINK,
   ELEMENT_PARAGRAPH, Plate,
   PlatePlugin,
   SPEditor,
@@ -22,16 +21,12 @@ import { useMemo } from 'react';
 import { withStyledPlaceHolders, } from './config/withStyledPlaceHolders';
 import { withStyledDraggables } from './config/withStyledDraggables';
 import { initialValueExitBreak } from './config/initialValues';
-import { createImagePlugin } from './packages/image/src/createImageNewPlugin';
-import { ImageElement } from './packages/image-ui/src/ImageElement/ImageElement';
-import { ELEMENT_IMAGE } from './packages/image/src/defaults';
-// import { createPowerLinkPlugin, ELEMENT_POWERLINK } from './packages/powerlink';
+import { createPowerLinkPlugin, ELEMENT_POWERLINK } from './packages/powerlink';
 import { PowerLinkElement } from './packages/powerlink-ui';
 
 
 let components = createPlateComponents({
-  [ELEMENT_IMAGE]: ImageElement as any,
-  [ELEMENT_LINK]: PowerLinkElement as any
+  [ELEMENT_POWERLINK]: PowerLinkElement as any
 })
 
 components = withStyledPlaceHolders(components);
@@ -44,10 +39,9 @@ function App() {
       createHistoryPlugin(),
       createHeadingPlugin(),
       createLinkPlugin(),
-      // createPowerLinkPlugin(),
+      createPowerLinkPlugin(),
       createParagraphPlugin(),
       createBlockquotePlugin(),
-      createImagePlugin(),
       createNodeIdPlugin(),
       createDndPlugin(),
       createTrailingBlockPlugin({

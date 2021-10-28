@@ -15,7 +15,6 @@ import {
   ELEMENT_UL,
   withDraggables,
 } from '@udecode/plate';
-import { ELEMENT_IMAGE } from "../packages/image/src/defaults";
 
 export const withStyledDraggables = (components: any) => {
   return withDraggables(components, [
@@ -34,7 +33,6 @@ export const withStyledDraggables = (components: any) => {
         ELEMENT_H4,
         ELEMENT_H5,
         ELEMENT_H6,
-        ELEMENT_IMAGE,
         ELEMENT_OL,
         ELEMENT_UL,
         ELEMENT_TABLE,
@@ -152,14 +150,6 @@ export const withStyledDraggables = (components: any) => {
           marginTop: '3px'
         },
       },
-    },
-    {
-      key: ELEMENT_IMAGE,
-      styles: {
-        gutterLeft: {
-          marginTop: '12px'
-        },
-      },
-    },
+    }
   ])
 }
